@@ -2,7 +2,6 @@ import './App.css';
 
 import Navbar from './Components/Navbar/Navbar';
 import HeroSection from "./Components/Hero/HeroSection";
-import Session from "./Components/Sessions/Session";
 import SessionGroup from './Components/Sessions/SessionGroup';
 import Footer from './Components/Footer/Footer';
 
