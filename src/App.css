@@ -40,21 +40,24 @@
 .hero-section {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
   height: 200px;
   gap: 5px;
   flex-wrap: wrap;
-  color: #686868;
+  background: #222;
+  color: #ffffff;
 }
 
 .hero-section h2 {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .fillColor {
   width: 70%;
   max-width: 700px;
   height: 5px;
+  animation: expand 3s ease;
 }
 
 .investimentos {
@@ -194,4 +197,10 @@ footer {
 .footer-box-bottom a {
   color: #fff;
   opacity: .7;
+}
+
+@keyframes expand {
+  from {
+    width: 10px;
+  }
 }
