@@ -6,7 +6,7 @@ export default function Navbar() {
         <header className="navbar">
             <nav className="navbar-content">
                 <div className="logo">
-                    <Logo/>
+                    <Logo color={"white"}/>
                 </div>
 
                 <a className="adicionar-investimento" href={"/adicionar-investimento"}> <FaWallet/> Adicionar Investimento</a>
