@@ -1,18 +1,18 @@
 import './App.css';
 
 import Navbar from './Components/Navbar/Navbar';
-import HeroSection from "./Components/Hero/HeroSection";
-import SessionGroup from './Components/Sessions/SessionGroup';
 import Footer from './Components/Footer/Footer';
+import Router from './router';
+
+import { BrowserRouter } from 'react-router-dom';
 
 export default function App() {
 
   return (
-    <div className="App">
+    <BrowserRouter className="App">
       <Navbar/>
-      <HeroSection/>
-      <SessionGroup limits={[0, 1]}/>
+        <Router/>
       <Footer/>
-    </div>
+    </BrowserRouter>
   );
 }
