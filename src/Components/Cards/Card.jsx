@@ -5,6 +5,8 @@ export default function Card({ elementForInvest }) {
     const [openForm, setOpenForm] = useState(false);
     const [currentValue, setCurrentValue] = useState(elementForInvest.currentValue)
 
+    
+
     async function toggleChange() {
         await setOpenForm(!openForm);
     }
@@ -15,6 +17,10 @@ export default function Card({ elementForInvest }) {
         elementForInvest.currentValue = ( (!currentValue || isNaN(currentValue) || currentValue < 0) ? 0 : currentValue );
 
         toggleChange();
+    }
+
+    function getStyle(open) {
+        return open ? { border: `1px solid ${elementForInvest.defaultColor}`, background: elementForInvest.defaultColor, color: "#fff" } : { border: `1px solid ${elementForInvest.defaultColor}`, color: elementForInvest.defaultColor, background:"#fff" }
     }
 
     return (
@@ -31,7 +37,7 @@ export default function Card({ elementForInvest }) {
                             <div className="form-control">
                                 <input type="text" name="investiments" id="investiments" onChange={(e) => setCurrentValue(e.target.value)} value={currentValue} />
 
-                                <button type="submit" className="alterar-btn" style={{ background: elementForInvest.defaultColor }}>
+                                <button type="submit" className="alterar-btn" style={getStyle(false)}>
                                     Alterar valor
                                 </button>
                             </div>
@@ -48,7 +54,7 @@ export default function Card({ elementForInvest }) {
                 <a href={`/grafico/${name}`} className="grafico-btn">
                     Acompanhar Grafico
                 </a>
-                <button onClick={toggleChange} className="atualizar-btn">
+                <button onClick={toggleChange} style={getStyle(true)} className="atualizar-btn">
                     {openForm ? "Cancelar" : "Alterar valor"}
                 </button>
             </div>
